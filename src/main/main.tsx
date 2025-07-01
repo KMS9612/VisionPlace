@@ -5,7 +5,8 @@ import HomeSection from "./home";
 
 export default function MainUI() {
   return (
-    <main className="container mx-auto flex-1 flex flex-col justify-center items-center">
+    // <main className="container mx-auto flex-1 flex flex-col justify-center items-center">
+    <main className="flex-1 flex flex-col justify-center items-center">
       <HeroSection />
       <HomeSection />
       <ContactSection />
