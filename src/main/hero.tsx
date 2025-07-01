@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="grid grid-flow-row grid-cols-6 w-full min-h-[calc(100vh-5rem-5rem)] bg-white"
+      className="w-full grid grid-flow-row grid-cols-6 min-h-[calc(100vh-5rem-5rem)] bg-white space-between"
     >
       <div
         id="hero-left-side"
