@@ -39,9 +39,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} antialiased scroll-smooth`}
       >
         {children}
       </body>
