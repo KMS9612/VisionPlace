@@ -1,4 +1,4 @@
-import ContactSection from "./contact";
+import ReviewSection from "./review";
 import HeroSection from "./hero";
 import CtaSection from "./cta";
 import WhySection from "./why";
@@ -22,7 +22,7 @@ export default function MainUI() {
         id="contact"
         className="w-full flex items-center justify-center h-screen min-h-[calc(100vh-5rem-5rem)] bg-gray-100"
       >
-        <ContactSection />
+        <ReviewSection />
       </section>
       <section
         id="about"

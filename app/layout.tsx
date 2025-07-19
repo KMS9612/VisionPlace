@@ -4,6 +4,7 @@ import {
   Geist_Mono,
   Noto_Sans_KR,
   Black_Han_Sans,
+  Pacifico,
 } from "next/font/google";
 import "./globals.css";
 
@@ -22,10 +23,10 @@ const notoSansKr = Noto_Sans_KR({
   subsets: ["latin"],
 });
 
-const blackHanSans = Black_Han_Sans({
-  variable: "--font-black-han-sans",
+const pacifico = Pacifico({
+  variable: "--font-pacifico",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -41,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} antialiased scroll-smooth`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} ${pacifico.variable} antialiased scroll-smooth`}
       >
         {children}
       </body>

@@ -41,7 +41,7 @@ export default function HeroSection() {
           </li>
           <li className="flex justify-start items-center">
             <Check color="green" />
-            <span>제작 외 비용 사전공지</span>
+            <span>투명한 비용</span>
           </li>
         </ul>
       </FadeInAnimation>
@@ -49,7 +49,11 @@ export default function HeroSection() {
         initial={{ opacity: 0, x: 80 }}
         className="flex flex-col items-center justify-center col-span-3"
       >
-        <img src="/#" alt="hero-right-side-image"></img>
+        <img
+          className="rounded-xl"
+          src="/main_image.jpg"
+          alt="hero-right-side-image"
+        ></img>
       </FadeInAnimation>
     </div>
   );

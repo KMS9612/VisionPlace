@@ -7,8 +7,14 @@ export default function HeaderUI() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex items-center justify-center">
       <nav className="container mx-auto flex items-center justify-between py-4">
         <div className="flex justify-center items-center gap-2 font-bold text-2xl">
-          <Monitor></Monitor>
-          <h2>Vision Place</h2>
+          <img
+            src="/logo.png"
+            alt="vision place logo"
+            className="w-[50px] h-[50px]"
+          />
+          <h2 id="top_navi_title" className="font-pacifico">
+            Vision Place
+          </h2>
         </div>
         <ul className="flex justify-center items-center gap-4">
           <li>
