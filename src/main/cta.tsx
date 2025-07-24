@@ -1,5 +1,10 @@
 import React from "react";
+import CtaForm from "../components/cta/ctaForm";
 
 export default function CtaSection() {
-  return <h1>About</h1>;
+  return (
+    <div className="w-full">
+      <CtaForm />
+    </div>
+  );
 }
