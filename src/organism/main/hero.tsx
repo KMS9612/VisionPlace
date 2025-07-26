@@ -1,8 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import FadeInAnimation from "@/src/service/motion/fade_in";
 import { Check, Rocket, MessageCircle } from "lucide-react";
-import * as motion from "motion/react-client";
-import FadeInAnimation from "../motion/fade_in";
 
 export default function HeroSection() {
   return (

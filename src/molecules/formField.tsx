@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   BaseInputUIPropsType,
   FormFieldProps,
-} from "../../type/components/cta/formField.type";
+} from "../type/components/cta/formField.type";
 
 const TextAreaUI = (props: BaseInputUIPropsType) => {
   const { id, placeholder } = props;

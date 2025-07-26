@@ -1,10 +1,10 @@
 "use client";
-import React, { ReactElement } from "react";
-import { useMotionValueEvent, useScroll } from "motion/react";
-import FadeInAnimation from "../motion/fade_in";
-import WhySectionItem from "../components/whySectionItem";
+import React from "react";
 import { HardDrive, MessageCircleQuestionMark, Users } from "lucide-react";
-import { WhySectionItemValueType } from "../type/main/whySection/sectionItemValue";
+import { WhySectionItemValueType } from "@/src/type/main/whySection/sectionItemValue";
+import FadeInAnimation from "@/src/service/motion/fade_in";
+import MainTitle from "@/src/atomic/main_title";
+import WhySectionItem from "@/src/components/whySectionItem";
 
 export default function WhySection() {
   const WhySectionItemValue: WhySectionItemValueType[] = [
@@ -50,10 +50,9 @@ export default function WhySection() {
         whileInView={{ opacity: 1, y: 0 }}
         className="row-span-2 text-glow flex flex-col justify-center items-center"
       >
-        <h1 className="font-semibold text-2xl">
-          <strong className="text-4xl">왜?</strong> 랜딩페이지를 제작하려고
-          하시나요?
-        </h1>
+        <strong className="text-4xl font-semibold">왜?</strong>
+        <MainTitle>랜딩페이지를 제작하려고 하시나요?</MainTitle>
+
         <p>VisionPlace는 랜딩페이지 제작의 목적에 집중합니다.</p>
       </FadeInAnimation>
       <div className="w-full h-full justify-center items-start row-span-10 flex flex-col flex-end oveflow-scroll px-60">

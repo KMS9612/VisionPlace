@@ -1,7 +1,7 @@
 "use client";
-import HeaderUI from "@/src/header/header";
-import MainUI from "@/src/main/main";
-import { useEffect } from "react";
+
+import HeaderUI from "@/src/organism/header/header";
+import MainUI from "@/src/organism/main/main";
 
 export default function Home() {
   // useEffect(() => {

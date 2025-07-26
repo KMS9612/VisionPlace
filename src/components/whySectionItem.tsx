@@ -1,6 +1,5 @@
-import { ReactElement } from "react";
-import FadeInAnimation from "../motion/fade_in";
 import { WhySectionItemValueType } from "../type/main/whySection/sectionItemValue";
+import FadeInAnimation from "../service/motion/fade_in";
 
 export default function WhySectionItem(props: WhySectionItemValueType) {
   const flexDirection =

@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 프로젝트 정보
 
-## Getting Started
+프로젝트명: VisionPlace
+프로젝트 설명: LandingPage 프리랜서 개발을 위한 VisionPlace라는 이름의 랜딩페이지
+프로젝트 용도: 고객 확보 및 고객데이터 적립(Google Analytics / GoogleSheet)
+주 사용 스택 : Next.js(15.3.4) / Shadcn / TailwindCSS / Motion
+Design Pattern : Atomic
 
-First, run the development server:
+## Commit Rule
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Commit Rule을 적용하지 않으려고 했지만 규칙이 있는게 추후 로그 확인과 작업 진행에 이점이 있을 것 같아 도입을 결정했습니다.
+CommitMessage는 최대한 (Reason) + (How) + (Result)의 조합이 이뤄지도록 합니다.
+(EX) "Fix: VisitedTracker API가 페이지 로드마다 작동하여 과도한 Transaction이 일어나고 있습니다. 클라이언트의 API 호출부분을 주석처리 하여 해당 기능이 작동하지 않도록 했습니다."
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Feat: 새로운 기능,UI 등 새롭게 코드를 작성하는 부분이 있으면 Feat를 CommitMessage앞에 작성합니다
+(EX) "Feat: Commit Mesaage"
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Fix: 기존에 있던 기능,UI,코드구조의 수정을 할 때 진행합니다.
+(EX) "Fix: VisitedTracker API가 페이지 로드마다 작동하여 과도한 Transaction이 일어나고 있습니다. 클라이언트의 API 호출부분을 주석처리 하여 해당 기능이 작동하지 않도록 했습니다."
