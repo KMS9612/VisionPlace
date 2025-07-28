@@ -11,7 +11,7 @@ export default function Navigation() {
       innerText: "About",
     },
     {
-      href: "#contack",
+      href: "#contact",
       innerText: "Contact",
     },
   ];
