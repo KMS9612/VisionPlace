@@ -1,7 +1,7 @@
 import { FormFieldItemType } from "@/src/type/components/cta/formField.type";
 import FormField from "./formField";
 
-const formFieldItems: FormFieldItemType = [
+const FORM_FIELD_ITEMS: FormFieldItemType = [
   // first row
   [
     {
@@ -55,7 +55,7 @@ export default function CtaForm() {
   return (
     <div className="w-full border-2 rounded-2xl p-12 flex flex-col justify-between items-center gap-10">
       <h2 className="text-4xl font-bold">상담을 신청해보세요!</h2>
-      {formFieldItems.map((row, rowIndex) => (
+      {FORM_FIELD_ITEMS.map((row, rowIndex) => (
         <div
           key={rowIndex}
           className={`${rowIndex === 1 ? "" : ""} w-full flex`}

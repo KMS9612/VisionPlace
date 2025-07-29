@@ -11,7 +11,7 @@ const CHECK_ICON_ITEM: ListIconPropsType[] = [
   { Icon: Check, iconColor: "green", innerText: "투명한 비용" },
 ];
 
-const IconBadgeItems: IconBadgePropsType[] = [
+const ICON_BADGE_ITEMS: IconBadgePropsType[] = [
   { innerText: "누구나 쉽게 제작", Icon: Rocket },
   { variant: "secondary", innerText: "친절한 상담", Icon: MessageCircle },
 ];
@@ -38,7 +38,7 @@ export default function HeroInfoSide() {
   return (
     <FadeInAnimation className="flex flex-col justify-center col-span-3 gap-6 z-10">
       <div className="flex gap-2">
-        {IconBadgeItems.map((el) => (
+        {ICON_BADGE_ITEMS.map((el) => (
           <IconBadge
             variant={el.variant}
             key={el.innerText}
