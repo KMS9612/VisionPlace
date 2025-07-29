@@ -2,6 +2,7 @@ import ReviewSection from "./review";
 import HeroSection from "./hero";
 import CtaSection from "./cta";
 import WhySection from "./why";
+import GradeSection from "./grade";
 
 export default function MainUI() {
   return (
@@ -23,6 +24,12 @@ export default function MainUI() {
         className="w-full flex items-center justify-center h-screen min-h-[calc(100vh-5rem-5rem)] bg-gray-100"
       >
         <ReviewSection />
+      </section>
+      <section
+        id="grade"
+        className="w-full flex items-center justify-center h-screen min-h-[calc(100vh-5rem-5rem)] bg-gray-50"
+      >
+        <GradeSection />
       </section>
       <section
         id="contact"
