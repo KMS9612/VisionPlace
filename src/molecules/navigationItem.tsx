@@ -44,7 +44,6 @@ export default function Navigation(props: NavigationPropsType) {
             <span
               className="cursor-pointer"
               onClick={() => scrollToSection(el.href)}
-              href={el.href}
             >
               {el.innerText}
             </span>
