@@ -36,35 +36,29 @@ const INTRODUCE_TEXT_GROUP: TextPropsType[] = [
 ];
 export default function HeroInfoSide() {
   return (
-    <FadeInAnimation className="flex flex-col justify-center col-span-3 gap-6 z-10">
-      <div className="flex gap-2">
-        {ICON_BADGE_ITEMS.map((el) => (
-          <IconBadge
-            variant={el.variant}
-            key={el.innerText}
-            innerText={el.innerText}
-            Icon={el.Icon}
-          />
-        ))}
+    <FadeInAnimation
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      className="flex flex-col justify-center col-span-3 gap-6 z-10"
+    >
+      <div className="mb-8">
+        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-pacifico">
+          VisionPlace
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          1인 사업자를 위한 전문적인 랜딩페이지 제작 서비스
+        </p>
       </div>
-      {INTRODUCE_TEXT_GROUP.map((text) => (
-        <Text
-          key={text.key}
-          variant={text.variant}
-          innerContent={text.innerContent}
-        />
-      ))}
-      <ButtonGroup />
-      <ul className="flex items-center text-sm text-gray-600 font-semibold gap-4">
-        {CHECK_ICON_ITEM.map((iconList) => (
-          <ListIcon
-            key={iconList.innerText}
-            Icon={iconList.Icon}
-            iconColor={iconList.iconColor}
-            innerText={iconList.innerText}
-          />
-        ))}
-      </ul>
+
+      <div className="mb-12">
+        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+          고객 유입부터 전환까지, 최고 성능의 반응형 랜딩페이지로 당신의
+          비즈니스를 성장시키세요
+        </p>
+      </div>
+      <div className="flex justify-center items-center">
+        <ButtonGroup />
+      </div>
     </FadeInAnimation>
   );
 }

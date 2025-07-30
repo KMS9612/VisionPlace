@@ -1,26 +1,53 @@
 import Link from "next/link";
 
-export default function Navigation() {
+type NavigationPropsType = {
+  isScrolled: boolean;
+};
+
+export default function Navigation(props: NavigationPropsType) {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   const NAVI_ITEM = [
     {
-      href: "#home",
+      href: "hero",
       innerText: "Home",
     },
     {
-      href: "#about",
+      href: "about",
       innerText: "About",
     },
     {
-      href: "#contact",
+      href: "grade",
+      innerText: "Grade",
+    },
+    {
+      href: "contact",
       innerText: "Contact",
     },
   ];
   return (
     <nav>
-      <ul className="flex justify-center items-center gap-4">
+      <ul
+        className={`flex justify-center items-center gap-4 duration-300 ${
+          props.isScrolled ? "" : "text-gray-100"
+        }`}
+      >
         {NAVI_ITEM.map((el) => (
           <li key={el.href}>
-            <Link href={el.href}>{el.innerText}</Link>
+            <span
+              className="cursor-pointer"
+              onClick={() => scrollToSection(el.href)}
+              href={el.href}
+            >
+              {el.innerText}
+            </span>
           </li>
         ))}
       </ul>

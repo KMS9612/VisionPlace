@@ -9,7 +9,7 @@ export default function MainUI() {
     <main className="">
       <section
         id="hero"
-        className="relative w-full h-screen min-h-[calc(100vh-5rem-5rem)] flex justify-center items-center bg-gray-50"
+        className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex items-center justify-center px-4 pt-20"
       >
         <HeroSection />
       </section>
