@@ -30,4 +30,4 @@ export interface SelectUIType extends BaseInputUIType {
 
 export type FormFieldProps = InputUIType | TextAreaUIType | SelectUIType;
 
-export type FormFieldItemType = FormFieldProps[][];
+export type FormFieldItemType = FormFieldProps[];

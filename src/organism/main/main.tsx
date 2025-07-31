@@ -24,10 +24,7 @@ export default function MainUI() {
       <section id="grade" className="py-20 bg-black text-white">
         <GradeSection />
       </section>
-      <section
-        id="contact"
-        className="flex items-center justify-center h-screen min-h-[calc(100vh-5rem-5rem)] bg-gray-50"
-      >
+      <section id="contact" className="py-20 bg-gray-50">
         <CtaSection />
       </section>
     </main>

@@ -22,7 +22,7 @@ const SelectItemUI = (props: BaseInputUIPropsType) => {
   const { id, placeholder, options } = props;
   return (
     <Select>
-      <SelectTrigger id={id} className="min-w-[150px] w-[150px] max-w-[200px]">
+      <SelectTrigger id={id} className="w-full">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>

@@ -1,7 +1,34 @@
 import { Gauge, Zap, Split, FolderSearch } from "lucide-react";
 
 export function ReasonSection() {
-  const metrics = [
+  return (
+    <section id="really" className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl mb-6 text-gray-900">
+            VisionPlace는 성능을 보장합니다.
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            페이지 이탈율의 큰 사유 중 하나는 로딩속도입니다. <br />
+            이탈율을 막기위한 최고의 성능을 보장합니다.
+          </p>
+        </div>
+        <ReasonIconCard />
+        <div className="grid md:grid-cols-1 gap-12 items-center">
+          <div>
+            <h3 className="text-2xl mb-6 text-gray-900">
+              Lighthouse 성능 점수
+            </h3>
+            <LightHousePerformanceCard />
+          </div>
+        </div>{" "}
+      </div>
+    </section>
+  );
+}
+
+function ReasonIconCard() {
+  const REASON_ICON_ITEMS = [
     {
       icon: Gauge,
       value: "95+",
@@ -30,79 +57,61 @@ export function ReasonSection() {
   ];
 
   return (
-    <section id="really" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-6 text-gray-900">
-            VisionPlace는 성능을 보장합니다.
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            페이지 이탈율의 큰 사유 중 하나는 로딩속도입니다. <br />
-            이탈율을 막기위한 최고의 성능을 보장합니다.
-          </p>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {REASON_ICON_ITEMS.map((cardItem, index) => (
+        <div key={index} className="text-center">
+          <div className="w-20 h-20 bg-black rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <cardItem.icon className="w-10 h-10 text-white" />
+          </div>
+          <div className="text-4xl mb-2 text-gray-900">{cardItem.value}</div>
+          <h3 className="text-lg mb-2 text-gray-900">{cardItem.label}</h3>
+          <p className="text-gray-600 text-sm">{cardItem.description}</p>
         </div>
+      ))}
+    </div>
+  );
+}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {metrics.map((metric, index) => (
-            <div key={index} className="text-center">
-              <div className="w-20 h-20 bg-black rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <metric.icon className="w-10 h-10 text-white" />
+function LightHousePerformanceCard() {
+  const PERFORMANCE_ITEMS = [
+    {
+      title: "성능",
+      rate: "w-15",
+      rateText: "94",
+    },
+    {
+      title: "접근성",
+      rate: "w-15",
+      rateText: "96",
+    },
+    {
+      title: "권장사항 준수",
+      rate: "w-full",
+      rateText: "100",
+    },
+    {
+      title: "검색엔진 최적화",
+      rate: "w-14",
+      rateText: "91",
+    },
+  ];
+  return (
+    <div className="bg-white p-6 rounded-2xl shadow-lg">
+      <div className="space-y-4">
+        {PERFORMANCE_ITEMS.map((item) => (
+          <div key={item.title} className="flex items-center justify-between">
+            <span className="text-sm">{item.title}</span>
+            <div className="flex items-center">
+              <div className="w-16 h-2 bg-gray-200 rounded-full mr-2">
+                <div
+                  className={`${item.rate} h-2 bg-green-500 rounded-full`}
+                ></div>
               </div>
-              <div className="text-4xl mb-2 text-gray-900">{metric.value}</div>
-              <h3 className="text-lg mb-2 text-gray-900">{metric.label}</h3>
-              <p className="text-gray-600 text-sm">{metric.description}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-1 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl mb-6 text-gray-900">
-              Lighthouse 성능 점수
-            </h3>
-            <div className="bg-white p-6 rounded-2xl shadow-lg">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm">Performance</span>
-                  <div className="flex items-center">
-                    <div className="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                      <div className="w-15 h-2 bg-green-500 rounded-full"></div>
-                    </div>
-                    <span className="text-sm text-green-600">98</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm">Accessibility</span>
-                  <div className="flex items-center">
-                    <div className="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                      <div className="w-full h-2 bg-green-500 rounded-full"></div>
-                    </div>
-                    <span className="text-sm text-green-600">100</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm">Best Practices</span>
-                  <div className="flex items-center">
-                    <div className="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                      <div className="w-15 h-2 bg-green-500 rounded-full"></div>
-                    </div>
-                    <span className="text-sm text-green-600">96</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm">SEO</span>
-                  <div className="flex items-center">
-                    <div className="w-16 h-2 bg-gray-200 rounded-full mr-2">
-                      <div className="w-full h-2 bg-green-500 rounded-full"></div>
-                    </div>
-                    <span className="text-sm text-green-600">90</span>
-                  </div>
-                </div>
-              </div>
+              <span className="text-sm text-green-600">{item.rateText}</span>
             </div>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
