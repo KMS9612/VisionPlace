@@ -1,4 +1,5 @@
 import { Gauge, Zap, Split, FolderSearch } from "lucide-react";
+// import Image from "next/image";
 
 export function ReasonSection() {
   return (
@@ -19,6 +20,12 @@ export function ReasonSection() {
             <h3 className="text-2xl mb-6 text-gray-900">
               Lighthouse 성능 점수
             </h3>
+            {/* <Image
+              width={1080}
+              height={300}
+              src={"/performance.png"}
+              alt="vision place performance picture"
+            ></Image> */}
             <LightHousePerformanceCard />
           </div>
         </div>{" "}
@@ -77,7 +84,7 @@ function LightHousePerformanceCard() {
     {
       title: "성능",
       rate: "w-15",
-      rateText: "94",
+      rateText: "95",
     },
     {
       title: "접근성",
@@ -91,8 +98,8 @@ function LightHousePerformanceCard() {
     },
     {
       title: "검색엔진 최적화",
-      rate: "w-14",
-      rateText: "91",
+      rate: "w-full",
+      rateText: "100",
     },
   ];
   return (
