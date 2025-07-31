@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 type NavigationPropsType = {
   isScrolled: boolean;
 };
@@ -17,11 +15,15 @@ export default function Navigation(props: NavigationPropsType) {
   const NAVI_ITEM = [
     {
       href: "hero",
-      innerText: "Home",
+      innerText: "Main",
     },
     {
-      href: "about",
+      href: "why",
       innerText: "About",
+    },
+    {
+      href: "process",
+      innerText: "Process",
     },
     {
       href: "grade",

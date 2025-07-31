@@ -1,8 +1,9 @@
-import ReviewSection from "./review";
 import HeroSection from "./hero";
 import CtaSection from "./cta";
 import WhySection from "./why";
 import GradeSection from "./grade";
+import { ProcessSection } from "./process";
+import { ReasonSection } from "./reason";
 
 export default function MainUI() {
   return (
@@ -13,22 +14,14 @@ export default function MainUI() {
       >
         <HeroSection />
       </section>
-      <section
-        id="home"
-        className={`w-full flex flex-col items-center justify-center h-screen min-h-[calc(100vh-5rem-5rem)] bg-gray-50`}
-      >
+      <section id="why" className={`py-20 bg-gray-50`}>
         <WhySection />
       </section>
-      <section
-        id="about"
-        className="w-full flex items-center justify-center h-screen min-h-[calc(100vh-5rem-5rem)] bg-gray-100"
-      >
-        <ReviewSection />
+      <section id="process" className="py-20 bg-black text-white">
+        <ProcessSection />
       </section>
-      <section
-        id="grade"
-        className="w-full flex items-center justify-center h-screen min-h-[calc(100vh-5rem-5rem)] bg-gray-50"
-      >
+      <ReasonSection />
+      <section id="grade" className="py-20 bg-black text-white">
         <GradeSection />
       </section>
       <section
