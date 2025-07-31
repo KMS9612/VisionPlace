@@ -8,12 +8,14 @@ type LogoPropsType = {
 export default function Logo(props: LogoPropsType) {
   return (
     <div
-      className={`flex justify-center items-center gap-2 font-bold text-2xl duration-300 ${
+      className={`flex justify-center items-center gap-2 font-bold duration-300 ${
         props.isScrolled ? "" : "text-gray-100"
       }`}
     >
       <Image width={50} height={50} src="/logo.png" alt="vision place logo" />
-      <MainTitle className="font-pacifico">Vision Place</MainTitle>
+      <MainTitle className="font-pacifico text-3xl md:text-2xl sm:text-sm">
+        Vision Place
+      </MainTitle>
     </div>
   );
 }

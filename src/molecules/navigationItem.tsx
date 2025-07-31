@@ -37,7 +37,7 @@ export default function Navigation(props: NavigationPropsType) {
   return (
     <nav>
       <ul
-        className={`flex justify-center items-center gap-4 duration-300 ${
+        className={`hidden sm:flex justify-center items-center gap-4 duration-300 text-xs md:text-base ${
           props.isScrolled ? "" : "text-gray-100"
         }`}
       >
