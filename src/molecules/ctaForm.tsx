@@ -1,6 +1,9 @@
+"use client";
 import { FormFieldItemType } from "@/src/type/components/cta/formField.type";
 import FormField from "./formField";
 import { Button } from "@/components/ui/button";
+// import { FormSubmitService } from "../service/_api/form_submit";
+// import { useRef } from "react";
 
 const FORM_FIELD_ITEMS: FormFieldItemType = [
   // first row
@@ -46,14 +49,46 @@ const FORM_FIELD_ITEMS: FormFieldItemType = [
   },
 ];
 
+export type FormValueType = {
+  name: string;
+  messanger: string;
+  purpose: string;
+  grade: "basic" | "standard" | "premium";
+};
+
 export default function CtaForm() {
+  // const formRef = useRef<HTMLFormElement>(null);
+
+  // const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  //   // Element기본 동작 방지 (Form 제출시의 페이지 리로드 방지)
+  //   event.preventDefault();
+
+  //   // FormField 각 요소에서 formData 가져오기
+  //   const formData = new FormData(event.currentTarget);
+  //   const formValue = Object.fromEntries(formData.entries());
+
+  //   // FormSubmit API 호출
+  //   try {
+  //     await FormSubmitService(formValue as FormValueType);
+  //     formRef.current?.reset();
+  //   } catch (err) {
+  //     console.log(err);
+  //     alert("상담 요청에 실패했습니다. 다시 시도해주세요");
+  //   }
+  //   return;
+  // };
+
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8">
-      <form className={`space-y-6 grid grid-rows-4`}>
+      <form
+        // ref={formRef}
+        // onSubmit={handleSubmit}
+        className={`space-y-6 grid grid-rows-4`}
+      >
         {FORM_FIELD_ITEMS.map((field) => (
           <FormField key={field.id} field={field} />
         ))}
-        <Button type="button">무료 상담 신청하기</Button>
+        <Button type="submit">무료 상담 신청하기</Button>
       </form>
     </div>
   );
