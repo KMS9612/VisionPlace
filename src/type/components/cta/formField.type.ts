@@ -1,33 +1,34 @@
-export type BaseInputUIPropsType = {
-  id: string;
-  placeholder: string;
-  options?: { value: string; label: string }[];
+export type FormValueType = {
+  name: string;
+  messanger: string;
+  grade: string;
+  purposeDetail: string;
 };
 
-export type BaseInputUIType = {
-  id: string;
+// 모든 필드의 기본 타입
+type BaseField = {
+  label: string;
+  id: keyof FormValueType; // id를 FormValueType의 키로 제한하여 타입 안정성 확보
+  htmlFor: string;
   placeholder: string;
 };
 
-export interface InputUIType extends BaseInputUIType {
+// 각 입력 유형에 대한 구체적인 타입
+type InputField = BaseField & {
   type: "input";
-  htmlFor: string;
-  label: string;
-}
+};
 
-export interface TextAreaUIType extends BaseInputUIType {
+type TextareaField = BaseField & {
   type: "textarea";
-  htmlFor: string;
-  label: string;
-}
+};
 
-export interface SelectUIType extends BaseInputUIType {
+type SelectField = BaseField & {
   type: "select";
   options: { value: string; label: string }[];
-  htmlFor: string;
-  label: string;
-}
+};
 
-export type FormFieldProps = InputUIType | TextAreaUIType | SelectUIType;
+// 모든 폼 필드 타입을 포함하는 유니온 타입
+export type FormFieldItem = InputField | TextareaField | SelectField;
 
-export type FormFieldItemType = FormFieldProps[];
+// 폼 필드 아이템 배열 타입
+export type FormFieldItemType = FormFieldItem[];

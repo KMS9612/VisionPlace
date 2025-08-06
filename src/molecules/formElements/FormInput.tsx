@@ -1,7 +1,25 @@
 import { Input } from "@/components/ui/input";
-import { BaseInputUIPropsType } from "@/src/type/components/cta/formField.type";
+import { FormValueType } from "@/src/type/components/cta/formField.type";
+import React from "react";
 
-export default function InputUI(props: BaseInputUIPropsType) {
-  const { id, placeholder } = props;
-  return <Input id={id} name={id} placeholder={placeholder} />;
-}
+type InputUIProps = {
+  id: keyof FormValueType;
+  placeholder: string;
+};
+
+const InputUI = React.forwardRef<HTMLInputElement, InputUIProps>(
+  ({ id, placeholder, ...props }, ref) => {
+    return (
+      <Input
+        id={id}
+        placeholder={placeholder}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+
+InputUI.displayName = "InputUI";
+
+export default InputUI;

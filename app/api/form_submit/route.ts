@@ -4,7 +4,7 @@ import { getSheets } from "../google-sheet";
 export async function POST(req: NextRequest) {
   try {
     const sheet = await getSheets();
-    const { name, messanger, purpose, grade } = await req.json();
+    const { name, messanger, purposeDetail, grade } = await req.json();
     const time = new Date();
 
     await sheet.spreadsheets.values.append({
@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
       range: "user_submit",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [[time, name, messanger, purpose, grade]],
+        values: [[time, name, messanger, purposeDetail, grade]],
       },
     });
 

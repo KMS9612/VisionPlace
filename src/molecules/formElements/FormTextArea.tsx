@@ -1,7 +1,25 @@
 import { Textarea } from "@/components/ui/textarea";
-import { BaseInputUIPropsType } from "@/src/type/components/cta/formField.type";
+import { FormValueType } from "@/src/type/components/cta/formField.type";
+import React from "react";
 
-export default function TextAreaUI(props: BaseInputUIPropsType) {
-  const { id, placeholder } = props;
-  return <Textarea id={id} name={id} placeholder={placeholder} />;
-}
+type TextAreaUIProps = {
+  id: keyof FormValueType;
+  placeholder: string;
+};
+
+const TextAreaUI = React.forwardRef<HTMLTextAreaElement, TextAreaUIProps>(
+  ({ id, placeholder, ...props }, ref) => {
+    return (
+      <Textarea
+        id={id}
+        placeholder={placeholder}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+
+TextAreaUI.displayName = "TextAreaUI";
+
+export default TextAreaUI;

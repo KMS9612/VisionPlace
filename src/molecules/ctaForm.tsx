@@ -1,9 +1,15 @@
 "use client";
-import { FormFieldItemType } from "@/src/type/components/cta/formField.type";
+import * as yup from "yup";
+import {
+  FormFieldItemType,
+  FormValueType,
+} from "@/src/type/components/cta/formField.type";
 import FormField from "./formField";
 import { Button } from "@/components/ui/button";
-// import { FormSubmitService } from "../service/_api/form_submit";
-// import { useRef } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { FormSubmitService } from "../service/_api/form_submit";
+import { useRef } from "react";
 
 const FORM_FIELD_ITEMS: FormFieldItemType = [
   // first row
@@ -49,44 +55,50 @@ const FORM_FIELD_ITEMS: FormFieldItemType = [
   },
 ];
 
-export type FormValueType = {
-  name: string;
-  messanger: string;
-  purpose: string;
-  grade: "basic" | "standard" | "premium";
-};
-
 export default function CtaForm() {
-  // const formRef = useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  // const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-  //   // Element기본 동작 방지 (Form 제출시의 페이지 리로드 방지)
-  //   event.preventDefault();
+  const formSchema = yup.object({
+    name: yup.string().required("이름을 입력해주세요."),
+    messanger: yup.string().required("연락수단을 선택해주세요."),
+    grade: yup.string().required("등급을 선택해주세요."),
+    purposeDetail: yup.string().required("상세 목적을 입력해주세요."),
+  });
 
-  //   // FormField 각 요소에서 formData 가져오기
-  //   const formData = new FormData(event.currentTarget);
-  //   const formValue = Object.fromEntries(formData.entries());
+  const {
+    register,
+    handleSubmit,
+    control, // control 객체 추가
+    formState: { errors },
+  } = useForm<FormValueType>({
+    resolver: yupResolver(formSchema),
+    defaultValues: {
+      name: "",
+      messanger: "",
+      grade: "",
+      purposeDetail: "",
+    },
+  });
 
-  //   // FormSubmit API 호출
-  //   try {
-  //     await FormSubmitService(formValue as FormValueType);
-  //     formRef.current?.reset();
-  //   } catch (err) {
-  //     console.log(err);
-  //     alert("상담 요청에 실패했습니다. 다시 시도해주세요");
-  //   }
-  //   return;
-  // };
-
+  const onSubmit = async (data: FormValueType) => {
+    await FormSubmitService(data);
+    formRef.current?.reset();
+  };
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8">
       <form
-        // ref={formRef}
-        // onSubmit={handleSubmit}
+        ref={formRef}
+        onSubmit={handleSubmit(onSubmit)}
         className={`space-y-6 grid grid-rows-4`}
       >
         {FORM_FIELD_ITEMS.map((field) => (
-          <FormField key={field.id} field={field} />
+          <FormField
+            key={field.id}
+            field={field}
+            register={register}
+            errors={errors}
+            control={control} // control prop 전달
+          />
         ))}
         <Button type="submit">무료 상담 신청하기</Button>
       </form>
