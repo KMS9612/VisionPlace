@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormSubmitService } from "../service/_api/form_submit";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useGradeStore } from "../store/gradeState";
 
 const FORM_FIELD_ITEMS: FormFieldItemType = [
   // first row
@@ -40,9 +41,9 @@ const FORM_FIELD_ITEMS: FormFieldItemType = [
     placeholder: "제작 등급을 선택해주세요.",
     type: "select",
     options: [
-      { value: "엔트리", label: "엔트리" },
+      { value: "베이직", label: "베이직" },
       { value: "스탠다드", label: "스탠다드" },
-      { value: "프로", label: "프로" },
+      { value: "프리미엄", label: "프리미엄" },
     ],
   },
 
@@ -70,6 +71,7 @@ export default function CtaForm() {
     handleSubmit,
     control, // control 객체 추가
     formState: { errors },
+    setValue,
   } = useForm<FormValueType>({
     resolver: yupResolver(formSchema),
     defaultValues: {
@@ -79,6 +81,24 @@ export default function CtaForm() {
       purposeDetail: "",
     },
   });
+
+  // Grade에서 State변경시 작동하는 useEffect
+  const { selectedGrade } = useGradeStore();
+
+  useEffect(() => {
+    if (selectedGrade) {
+      const gradeMap: { [key: string]: string } = {
+        Basic: "베이직",
+        Standard: "스탠다드",
+        Premium: "프리미엄",
+      };
+
+      const formGradeValue = gradeMap[selectedGrade];
+      if (formGradeValue !== "") {
+        setValue("grade", formGradeValue, { shouldValidate: true });
+      }
+    }
+  }, [selectedGrade, setValue]);
 
   const onSubmit = async (data: FormValueType) => {
     await FormSubmitService(data);

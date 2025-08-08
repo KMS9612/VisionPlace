@@ -1,14 +1,18 @@
 import { Button } from "@/components/ui/button";
+import { useGradeStore } from "@/src/store/gradeState";
 import { Check, Star } from "lucide-react";
 
 export default function GradeSection() {
-  const scrollToSection = (sectionId: string) => {
+  const { setSelectedGrade } = useGradeStore();
+
+  const scrollToSection = (sectionId: string, grade: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
+      setSelectedGrade(grade);
     }
   };
 
@@ -102,7 +106,7 @@ export default function GradeSection() {
             </ul>
 
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("contact", plan.name)}
               className={`w-full rounded-xl py-6 ${
                 plan.popular
                   ? "bg-white text-black hover:bg-gray-200"
