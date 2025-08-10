@@ -132,3 +132,7 @@
 .text-glow {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+html body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
+}
