@@ -48,6 +48,20 @@ export const metadata: Metadata = {
     "웹개발",
     "웹개발외주",
   ],
+  openGraph: {
+    title: "VisionPlace | 당신의 첫 랜딩페이지",
+    description: "1인 기업, 전문가, 프리랜서를 위한 맞춤형 랜딩페이지 제작.",
+    url: "https://visionplace.vercel.app/", // 도메인 구매시 변경 필요.
+    siteName: "VisionPlace",
+    images: [
+      {
+        url: "/main_image.jpg", // public 폴더에 og-image.png 파일을 추가해야 합니다.
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
