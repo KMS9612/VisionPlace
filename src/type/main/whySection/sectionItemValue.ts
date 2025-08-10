@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
 export type WhySectionItemValueType = {
-  titleIcon: ReactElement<any, any>;
+  titleIcon: ReactElement;
   title: string;
   desc: string;
   content: string;

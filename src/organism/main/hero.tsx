@@ -1,16 +1,16 @@
-import ButtonGroup from "@/src/molecules/buttonGroup";
+// import ButtonGroup from "@/src/molecules/buttonGroup";
 import HeroInfoSide from "@/src/molecules/heroInfoSide";
 
 export default function HeroSection() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+  // const scrollToSection = (sectionId: string) => {
+  //   const element = document.getElementById(sectionId);
+  //   if (element) {
+  //     element.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+  // };
   return (
     <div className="max-w-6xl mx-auto text-center">
       <HeroInfoSide />
