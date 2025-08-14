@@ -1,7 +1,7 @@
 "use client";
 
-import HeaderUI from "@/src/organism/header/header";
-import MainUI from "@/src/organism/main/main";
+// import HeaderUI from "@/src/organism/header/header";
+// import MainUI from "@/src/organism/main/main";
 
 export default function Home() {
   // useEffect(() => {
@@ -15,11 +15,12 @@ export default function Home() {
 
   return (
     <div className="relative flex flex-col">
-      <HeaderUI />
+      {/* <HeaderUI />
       <MainUI />
       <footer className="h-16 bg-gray-800 text-white flex items-center justify-center">
         <p>Copyright by Kim Min Seung 2025</p>
-      </footer>
+      </footer> */}
+      <h1>점검 중 입니다. 빠른 시일내로 더 좋은 서비스로 찾아가겠습니다.</h1>
     </div>
   );
 }
