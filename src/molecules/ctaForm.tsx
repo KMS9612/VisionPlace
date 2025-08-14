@@ -21,6 +21,13 @@ const FORM_FIELD_ITEMS: FormFieldItemType = [
     htmlFor: "name",
     id: "name",
   },
+  {
+    label: "전화번호",
+    placeholder: "전화번호를 입력해주세요.",
+    type: "input",
+    htmlFor: "phoneNumber",
+    id: "phoneNumber",
+  },
   // second row
   {
     label: "연락수단",
@@ -61,6 +68,7 @@ export default function CtaForm() {
 
   const formSchema = yup.object({
     name: yup.string().required("이름을 입력해주세요."),
+    phoneNumber: yup.string().required("전화번호를 입력해주세요."),
     messanger: yup.string().required("연락수단을 선택해주세요."),
     grade: yup.string().required("등급을 선택해주세요."),
     purposeDetail: yup.string().required("상세 목적을 입력해주세요."),
@@ -79,6 +87,7 @@ export default function CtaForm() {
       messanger: "",
       grade: "",
       purposeDetail: "",
+      phoneNumber: "",
     },
   });
 

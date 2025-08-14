@@ -3,6 +3,7 @@ export type FormValueType = {
   messanger: string;
   grade: string;
   purposeDetail: string;
+  phoneNumber: string;
 };
 
 // 모든 필드의 기본 타입
