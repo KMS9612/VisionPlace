@@ -1,7 +1,7 @@
 ## 프로젝트 정보
 
-프로젝트명: VisionPlace
-프로젝트 설명: LandingPage 프리랜서 개발을 위한 VisionPlace라는 이름의 랜딩페이지
+프로젝트명: VisionPage
+프로젝트 설명: LandingPage 프리랜서 개발을 위한 VisionPage라는 이름의 랜딩페이지
 프로젝트 용도: 고객 확보 및 고객데이터 적립(Google Analytics / GoogleSheet)
 주 사용 스택 : Next.js(15.3.4) / Shadcn / TailwindCSS / Motion
 Design Pattern : Atomic

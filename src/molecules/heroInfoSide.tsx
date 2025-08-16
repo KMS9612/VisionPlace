@@ -43,7 +43,7 @@ export default function HeroInfoSide() {
     >
       <div className="mb-8">
         <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-pacifico">
-          VisionPlace
+          VisionPage
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
           1인 사업자를 위한 전문적인 랜딩페이지 제작 서비스

@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://visionplace.vercel.app";
+  const baseUrl = "https://visionpage.vercel.app";
   return [
     {
       url: baseUrl, // 실제 도메인으로 변경

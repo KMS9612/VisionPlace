@@ -7,7 +7,7 @@ export function ReasonSection() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-6 text-gray-900">
-            VisionPlace는 성능을 보장합니다.
+            VisionPage는 성능을 보장합니다.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             페이지 이탈율의 큰 사유 중 하나는 로딩속도입니다. <br />

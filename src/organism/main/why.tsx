@@ -20,13 +20,13 @@ export default function WhySection() {
       icon: HeartHandshake,
       title: "끝까지 함께하는 유지보수",
       description:
-        "홈페이지의 유지보수가 필요할때마다 번거로우시지 않게 VisionPlace가 책임지겠습니다.",
+        "홈페이지의 유지보수가 필요할때마다 VisionPage가 책임지겠습니다.",
     },
     {
       icon: CircleDollarSign,
       title: "월 유지비 ZERO",
       description:
-        "VisionPlace만의 노하우로 월 유지비가 들지않습니다. (연간 URL비용, 페이지 수정 요청 제외)",
+        "VisionPage만의 노하우로 월 유지비가 들지않습니다. (실비, 유지보수 요청 제외)",
     },
     {
       icon: TrendingUp,
@@ -52,7 +52,7 @@ export default function WhySection() {
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl mb-6 text-gray-900">
           {/* 고객 전환, 이제 고민 끝 */}왜{" "}
-          <span className="font-pacifico">VisionPlace</span>를 선택해야할까요?
+          <span className="font-pacifico">VisionPage</span>를 선택해야할까요?
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           단순한 웹사이트가 아닌, 실제로 고객을 끌어들이고 전환시키는 전략적
