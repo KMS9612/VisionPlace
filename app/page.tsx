@@ -1,5 +1,5 @@
 "use client";
-
+import "@/src/service/_api/fb";
 import HeaderUI from "@/src/organism/header/header";
 import MainUI from "@/src/organism/main/main";
 
