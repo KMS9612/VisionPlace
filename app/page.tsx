@@ -1,13 +1,7 @@
 "use client";
-<<<<<<< HEAD
 
 // import HeaderUI from "@/src/organism/header/header";
 // import MainUI from "@/src/organism/main/main";
-=======
-import "@/src/service/_api/fb";
-import HeaderUI from "@/src/organism/header/header";
-import MainUI from "@/src/organism/main/main";
->>>>>>> b021a3b8dab136f25c0ff182dfcbc1a09e90ac73
 
 export default function Home() {
   // useEffect(() => {
