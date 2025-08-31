@@ -36,11 +36,12 @@ export default function GradeSection() {
       popular: true,
       description: "가장 인기 있는 선택",
       features: [
-        "구글 스프레드시트 연동",
-        "구글 애널리틱스 설정",
+        "구글제공 데이터베이스 사용",
+        "일반 관리자페이지 제공",
+        "후기 관리기능 제공",
         "CTA 폼 문의 기능",
         "맞춤형 전문 디자인",
-        "고급 SEO 최적화",
+        "맞춤 SEO 최적화",
         "2개월 무료 유지보수",
       ],
     },
@@ -50,8 +51,8 @@ export default function GradeSection() {
       popular: false,
       description: "완전한 솔루션",
       features: [
-        "전용 데이터베이스 (Firebase)",
-        "전용 관리자 페이지",
+        "구글제공 데이터베이스 사용",
+        "전문 관리자 페이지(통계, 상담리스트 관리 기능 등)",
         "커스텀 기능 (통계, 자동문자)",
         "7섹션 풀페이지",
         "맞춤형 전문 디자이너 디자인",
@@ -68,6 +69,10 @@ export default function GradeSection() {
         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
           사업 규모에 맞는 합리적인 가격으로 전문적인 랜딩페이지를 제작하세요
         </p>
+        <span className="text-xs text-gray-500">
+          *모든 등급에 섹션추가 가능합니다 <br />
+          (추가 비용은 상담과정에서 문의 부탁드립니다).
+        </span>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
