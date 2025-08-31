@@ -3,8 +3,7 @@ import CtaSection from "./cta";
 import WhySection from "./why";
 import GradeSection from "./grade";
 import { ProcessSection } from "./process";
-import { ReasonSection } from "./reason";
-
+import { PerformanceSection } from "./performance";
 export default function MainUI() {
   return (
     <main className="">
@@ -20,7 +19,9 @@ export default function MainUI() {
       <section id="process" className="py-20 bg-black text-white">
         <ProcessSection />
       </section>
-      <ReasonSection />
+      <section id="performance" className="py-20 bg-gray-50">
+        <PerformanceSection />
+      </section>
       <section id="grade" className="py-20 bg-black text-white">
         <GradeSection />
       </section>

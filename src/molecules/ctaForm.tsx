@@ -11,6 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { FormSubmitService } from "../service/_api/form_submit";
 import { useEffect, useRef } from "react";
 import { useGradeStore } from "../store/gradeState";
+import { useFormButtonStore } from "../store/formButtonState";
 
 const FORM_FIELD_ITEMS: FormFieldItemType = [
   // first row
@@ -93,6 +94,7 @@ export default function CtaForm() {
 
   // Grade에서 State변경시 작동하는 useEffect
   const { selectedGrade } = useGradeStore();
+  const { isButtonDisable } = useFormButtonStore();
 
   useEffect(() => {
     if (selectedGrade) {
@@ -129,7 +131,16 @@ export default function CtaForm() {
             control={control} // control prop 전달
           />
         ))}
-        <Button type="submit">무료 상담 신청하기</Button>
+        <Button
+          type="submit"
+          disabled={isButtonDisable}
+          className="transition-all duration-300 ease-in-out"
+        >
+          {isButtonDisable
+            ? "개인정보수집에 동의해주세요"
+            : "무료 상담 신청하기"}
+          {/* 무료 상담 신청하기 */}
+        </Button>
       </form>
     </div>
   );

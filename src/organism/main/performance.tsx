@@ -1,40 +1,39 @@
 import { Gauge, Zap, Split, FolderSearch } from "lucide-react";
 // import Image from "next/image";
 
-export function ReasonSection() {
+export function PerformanceSection() {
   return (
-    <section id="really" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-6 text-gray-900">
-            VisionPage는 성능을 보장합니다.
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            페이지 이탈율의 큰 사유 중 하나는 로딩속도입니다. <br />
-            이탈율을 막기위한 최고의 성능을 보장합니다.
-          </p>
-        </div>
-        <ReasonIconCard />
-        <div className="grid md:grid-cols-1 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl mb-6 text-gray-900">
-              Lighthouse 성능 점수
-            </h3>
-            {/* <Image
+    <div className="max-w-6xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl mb-6 text-gray-900">
+          <span className="font-pacifico">VisionPage</span>는 성능을 보장합니다.
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          페이지 이탈율의 큰 사유 중 하나는 로딩속도입니다. <br />
+          이탈율을 막기위한 최고의 성능을 보장합니다.
+        </p>
+      </div>
+      <PerformanceIconCard />
+      <div className="grid md:grid-cols-1 gap-12 items-center">
+        <div>
+          <h3 className="text-2xl text-gray-900">Lighthouse 성능 점수</h3>
+          <span className="text-gray-500 text-xs sm:text-sm">
+            *LightHouse는 GoogleChrome 개발자도구의 성능검사 도구입니다.
+          </span>
+          {/* <Image
               width={1080}
               height={300}
               src={"/performance.png"}
               alt="vision place performance picture"
             ></Image> */}
-            <LightHousePerformanceCard />
-          </div>
-        </div>{" "}
-      </div>
-    </section>
+          <LightHousePerformanceCard />
+        </div>
+      </div>{" "}
+    </div>
   );
 }
 
-function ReasonIconCard() {
+function PerformanceIconCard() {
   const REASON_ICON_ITEMS = [
     {
       icon: Gauge,

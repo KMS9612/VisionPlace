@@ -42,7 +42,7 @@ export default function HeroInfoSide() {
       className="flex flex-col justify-center col-span-3 gap-6 z-10"
     >
       <div className="mb-8">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-pacifico">
+        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-pacifico pb-10">
           VisionPage
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

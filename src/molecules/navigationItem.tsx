@@ -26,6 +26,10 @@ export default function Navigation(props: NavigationPropsType) {
       innerText: "Process",
     },
     {
+      href: "performance",
+      innerText: "Performance",
+    },
+    {
       href: "grade",
       innerText: "Grade",
     },
@@ -37,7 +41,7 @@ export default function Navigation(props: NavigationPropsType) {
   return (
     <nav>
       <ul
-        className={`hidden sm:flex justify-center items-center gap-4 duration-300 text-xs md:text-base ${
+        className={`hidden sm:flex justify-center items-center gap-2 sm:gap-4 duration-300 text-xs md:text-base ${
           props.isScrolled ? "" : "text-gray-100"
         }`}
       >

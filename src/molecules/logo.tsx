@@ -12,9 +12,9 @@ export default function Logo(props: LogoPropsType) {
         props.isScrolled ? "" : "text-gray-100"
       }`}
     >
-      <Image width={50} height={50} src="/logo.png" alt="vision place logo" />
-      <MainTitle className="font-pacifico text-3xl md:text-2xl sm:text-sm">
-        Vision Place
+      <Image width={50} height={50} src="/logo.png" alt="vision page logo" />
+      <MainTitle className="hidden lg:inline font-pacifico text-3xl md:text-2xl sm:text-sm">
+        Vision Page
       </MainTitle>
     </div>
   );

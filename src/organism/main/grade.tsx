@@ -115,6 +115,7 @@ export default function GradeSection() {
             >
               {plan.name} 선택하기
             </Button>
+            <span className="text-gray-400 text-xs">*부가세 별도</span>
           </div>
         ))}
       </div>
