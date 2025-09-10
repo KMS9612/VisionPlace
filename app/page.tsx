@@ -12,7 +12,6 @@ export default function Home() {
   //   body: JSON.stringify({ time: new Date() }),
   // });
   // }, []);
-
   return (
     <div className="relative flex flex-col">
       <HeaderUI />

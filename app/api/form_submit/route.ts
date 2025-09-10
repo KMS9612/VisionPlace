@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 // import { getSheets } from "../google-sheet";
 import { db } from "@/src/service/_api/fb";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,11 +16,15 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // 상담 상태 초기값
+    const defaultStatus = "pending";
+
     const isSuccess = await CreateFormDoc(
       name,
       messanger,
       purposeDetail,
-      grade
+      grade,
+      defaultStatus
     );
 
     if (isSuccess) {
@@ -44,14 +48,19 @@ async function CreateFormDoc(
   name: string,
   messanger: string,
   purposeDetail: string,
-  grade: string
+  grade: string,
+  defaultStatus: "pending" | "in-progress" | "completed"
 ) {
   try {
+    // 등록 날짜
+
     const docRef = await addDoc(collection(db, "submited_form"), {
+      createdAt: serverTimestamp(),
       name: name,
       messanger: messanger,
       purposeDetail: purposeDetail,
       grade: grade,
+      status: defaultStatus,
     });
 
     console.log(docRef.id + "가 등록되었습니다.");
